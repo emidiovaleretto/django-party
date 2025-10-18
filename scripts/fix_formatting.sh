@@ -9,11 +9,11 @@ echo "🔧 Auto-fixing Python code formatting issues..."
 
 # Fix unused imports and variables
 echo "📦 Removing unused imports..."
-autoflake --in-place --remove-all-unused-imports --remove-unused-variables --recursive .
+python -m autoflake --in-place --remove-all-unused-imports --remove-unused-variables --recursive .
 
 # Fix PEP8 issues
 echo "✨ Fixing PEP8 formatting..."
-autopep8 --in-place --aggressive --aggressive --recursive --max-line-length 127 .
+python -m autopep8 --in-place --aggressive --aggressive --recursive --max-line-length 127 .
 
 echo "✅ All formatting issues fixed!"
 echo ""
