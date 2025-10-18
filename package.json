@@ -1,0 +1,29 @@
+{
+  "name": "django-party",
+  "version": "1.0.0",
+  "description": "A Django party management application with Tailwind CSS and HTMX",
+  "private": true,
+  "scripts": {
+    "tailwind:dev": "tailwindcss -i party/static/party/src/main.css -o party/static/party/css/tailwind_output.css --watch",
+    "tailwind:build": "tailwindcss -i party/static/party/src/main.css -o party/static/party/css/tailwind_output.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emidiovaleretto/django-party.git"
+  },
+  "keywords": [
+    "django",
+    "party",
+    "tailwindcss",
+    "htmx"
+  ],
+  "author": "Emidio Valeretto Neto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emidiovaleretto/django-party/issues"
+  },
+  "homepage": "https://github.com/emidiovaleretto/django-party#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  }
+}

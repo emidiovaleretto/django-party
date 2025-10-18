@@ -4,9 +4,13 @@
     <meta charset="UTF-8" />
     <title>Party!</title>
     <script type="text/javascript" src="{% static '/party/js/htmx.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static '/party/css/tailwind_output.css' %}" />
   </head>
-  <body>
-    <main>
+  <body class="bg-custom-powder-light">
+    <nav class="bg-custom-red">
+      <a href="" class="inline-block p-4 text-custom-powder-light font-dancing-script text-2xl">My Parties</a>
+    </nav>
+    <main class="container mx-auto p-5">
       {% block content %}
 
       {% endblock %}
