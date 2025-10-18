@@ -25,6 +25,10 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+    - name: Check PEP8 Formatting
+      run: |
+        chmod +x scripts/check_formatting.sh
+        ./scripts/check_formatting.sh
     - name: Run Tests
       env:
         SECRET_KEY: 'django-insecure-test-key-for-ci-only'
