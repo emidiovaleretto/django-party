@@ -2,6 +2,7 @@
 module.exports = {
   content: [
     './party/templates/party/**/*.html',
+    './templates/**/*.html',
     './party/static/party/js/**/*.js',
     './party/static/party/src/**/*.css',
     './**/*.py',

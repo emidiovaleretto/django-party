@@ -4,14 +4,16 @@
   <head>
     <meta charset="UTF-8" />
     <title>Party!</title>
-    <script type="text/javascript" src="{% static './party/js/htmx.min.js' %}"></script>
-    <script type="text/javascript" src="{% static './party/js/alpine.min.js' %}" defer></script>
-    <link rel="stylesheet" href="{% static './party/css/tailwind_output.css' %}" />
+  <script type="text/javascript" src="{% static 'party/js/htmx.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'party/js/alpine.min.js' %}" defer></script>
+  <link rel="stylesheet" href="{% static 'party/css/tailwind_output.css' %}" />
   </head>
-  <body class="bg-custom-powder-light">
-    <nav class="bg-custom-red">
-      <a href="" class="inline-block p-4 text-custom-powder-light font-dancing-script text-2xl">My Parties</a>
-    </nav>
+  <body class="bg-custom-powder">
+    <header class="bg-custom-red">
+      <nav class="container mx-auto">
+        <a href="" class="inline-block p-4 text-custom-powder-light font-dancing-script text-2xl">My Parties</a>
+      </nav>
+    </header>
     <main class="container mx-auto p-5">
       {% block content %}
 

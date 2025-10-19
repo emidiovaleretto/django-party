@@ -30,7 +30,7 @@ class Party(models.Model):
         '''
         Meta data for Party model.
         '''
-        verbose_name_plural = "Parties"
+        verbose_name_plural = "parties"
 
     def __str__(self):
         return f"Party on {self.party_date} at {self.venue}"
@@ -63,7 +63,8 @@ class Guest(models.Model):
     is_attending = models.BooleanField(default=False)
     party = models.ForeignKey(
         Party,
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name='guests'
     )
 
     def __str__(self):
