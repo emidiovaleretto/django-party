@@ -44,17 +44,13 @@ def test_party_list_page_returns_list_of_users_future_parties(
     )
 
     create_party(
-        host=user,
-        party_date=today - datetime.timedelta(days=10),
+        host=other_user,
         venue="Venue C"
     )
-
-    # Create a party for another user
-
     create_party(
-        host=other_user,
-        party_date=today + datetime.timedelta(days=15),
-        venue="Venue D"
+        host=user,
+        party_date=today - datetime.timedelta(days=2 * 365),
+        venue="Venue D",
     )
 
     url = reverse("page_party_list")
