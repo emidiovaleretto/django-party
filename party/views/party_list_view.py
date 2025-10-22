@@ -16,7 +16,7 @@ class PartyListView(LoginRequiredMixin, ListView):
     def get_queryset(self):
         return Party.objects.filter(
             host=self.request.user,
-            party_date__gte=datetime.date.today() - datetime.timedelta(days=365)
+            party_date__gte=datetime.date.today()
         ).order_by(
             "party_date"
         )
