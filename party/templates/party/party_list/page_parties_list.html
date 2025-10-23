@@ -7,7 +7,7 @@
         <h2 class="mb-2 font-bold text-2xl text-custom-red uppercase">{{ party.party_date|date:'d/m/Y' }}, {{ party.party_time|time:'g:i A' }}, {{ party.venue }}</h2>
         <div>{{ party.invitation_note|truncatewords:120 }}</div>
         <div class="mt-4">
-          <a href="" class="text-custom-blue hover:text-custom-blue-light mr-4">Party details</a>
+          <a href="{% url 'page_party_detail' party.id %}" class="text-custom-blue hover:text-custom-blue-light mr-4">Party details</a>
           <a href="" class="text-custom-blue hover:text-custom-blue-light mr-4">Gift registry</a>
           <a href="" class="text-custom-blue hover:text-custom-blue-light">Guest List</a>
         </div>
