@@ -74,7 +74,7 @@ def test_detail_partial_put_method_returns_updated_party_details(
     url = reverse("partial_party_detail", args=[party.id])
 
     data = urlencode({
-        "party_date": "2025-06-06",
+        "party_date": datetime.date.today(),
         "party_time": "18:00:00",
         "venue": "New Venue",
         "invitation_note": "New Invitation Note",
@@ -87,7 +87,7 @@ def test_detail_partial_put_method_returns_updated_party_details(
     )
 
     assert response.status_code == 200
-    assert Party.objects.get(id=party.id).party_date == datetime.date(2025, 6, 6)
+    assert Party.objects.get(id=party.id).party_date == datetime.date.today()
     assert Party.objects.get(id=party.id).party_time == datetime.time(18, 0, 0)
     assert Party.objects.get(id=party.id).venue == "New Venue"
     assert Party.objects.get(id=party.id).invitation_note == "New Invitation Note"
