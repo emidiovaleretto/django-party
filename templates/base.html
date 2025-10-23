@@ -8,10 +8,10 @@
   <script type="text/javascript" src="{% static 'party/js/alpine.min.js' %}" defer></script>
   <link rel="stylesheet" href="{% static 'party/css/tailwind_output.css' %}" />
   </head>
-  <body class="bg-custom-powder">
+  <body class="bg-custom-powder" hx-headers='{"X-CSRFToken": "{{ csrf_token }}"}'>
     <header class="bg-custom-red">
       <nav class="container mx-auto">
-        <a href="" class="inline-block p-4 text-custom-powder-light font-dancing-script text-2xl">My Parties</a>
+        <a href="{% url 'page_party_list' %}" class="inline-block p-4 text-custom-powder-light font-dancing-script text-2xl">My Parties</a>
       </nav>
     </header>
     <main class="container mx-auto p-5">
