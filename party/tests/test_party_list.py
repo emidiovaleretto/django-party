@@ -49,7 +49,7 @@ def test_party_list_page_returns_list_of_users_future_parties(
     )
     create_party(
         host=user,
-        party_date=today - datetime.timedelta(days=2 * 365),
+        party_date=today - datetime.timedelta(days=10),
         venue="Venue D",
     )
 

@@ -24,7 +24,7 @@ def test_party_detail_page_returns_whole_page_with_a_single_party(
 
     party = create_party(host=create_user)
 
-    url = reverse('page_single_party', args=[party.uuid])
+    url = reverse('page_party_detail', args=[party.id])
     response = authenticated_client(create_user).get(url)
 
     assert response.status_code == 200
@@ -47,7 +47,7 @@ def test_detail_partial_get_method_returns_a_form_prefilled_with_party_details(
 
     party = create_party(host=create_user)
 
-    url = reverse('partial_party_detail', args=[party.uuid])
+    url = reverse('partial_party_detail', args=[party.id])
     response = authenticated_client(create_user).get(url)
 
     assert response.status_code == 200
@@ -71,7 +71,7 @@ def test_detail_partial_put_method_returns_updated_party_details(
 
     party = create_party(host=create_user)
 
-    url = reverse("partial_party_detail", args=[party.uuid])
+    url = reverse("partial_party_detail", args=[party.id])
 
     data = urlencode({
         "party_date": "2025-06-06",
@@ -87,7 +87,7 @@ def test_detail_partial_put_method_returns_updated_party_details(
     )
 
     assert response.status_code == 200
-    assert Party.objects.get(uuid=party.uuid).party_date == datetime.date(2025, 6, 6)
-    assert Party.objects.get(uuid=party.uuid).party_time == datetime.time(18, 0, 0)
-    assert Party.objects.get(uuid=party.uuid).venue == "New Venue"
-    assert Party.objects.get(uuid=party.uuid).invitation_note == "New Invitation Note"
+    assert Party.objects.get(id=party.id).party_date == datetime.date(2025, 6, 6)
+    assert Party.objects.get(id=party.id).party_time == datetime.time(18, 0, 0)
+    assert Party.objects.get(id=party.id).venue == "New Venue"
+    assert Party.objects.get(id=party.id).invitation_note == "New Invitation Note"
