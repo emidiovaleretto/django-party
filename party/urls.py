@@ -14,6 +14,9 @@ party_detail_urlpatterns = [
 
 new_party_urlpatterns = [
     path("party/new/", views.create_party_view, name="page_new_party"),
+    path("party/new/check_date", views.partial_check_party_date, name="partial_check_party_date"),
+    path("party/new/check_invitation_note", views.partial_check_invitation_note, name="partial_check_invitation_note"),
+
 ]
 
 urlpatterns = list_parties_urlpatterns + party_detail_urlpatterns + new_party_urlpatterns

@@ -1,6 +1,7 @@
 import datetime
 
 from django import forms
+from django.urls import reverse_lazy
 from party.models import Party
 
 
@@ -13,7 +14,11 @@ class PartyForm(forms.ModelForm):
         fields = ("party_date", "party_time", "venue", "invitation_note")
         widgets = {
             "party_date": forms.DateInput(attrs={
-                "type": "date"
+                "type": "date",
+                "hx-get": reverse_lazy("partial_check_party_date"),
+                "hx-trigger": "blur",
+                "hx-swap": "outerHTML",
+                "hx-target": "#div_id_party_date"
             }),
             "party_time": forms.TimeInput(attrs={
                 "type": "time",
@@ -23,6 +28,10 @@ class PartyForm(forms.ModelForm):
             }),
             "invitation_note": forms.Textarea(attrs={
                 "class": "w-full resize-none border border-gray-300 rounded-md p-2 my-2",
+                "hx-get": reverse_lazy("partial_check_invitation_note"),
+                "hx-trigger": "blur",
+                "hx-swap": "outerHTML",
+                "hx-target": "#div_id_invitation_note"
             })
         }
 
